@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+<style>
+  .swal-wide{
+    width:550px !important;
+}
+</style>
+</head>
+
+<body>
+    <div class="ui text container" style="margin-top: 50px;">
+        <h1 class="ui dividing header">Survey</h1>
+  
+<h3>About You</h3>
+<form id="form">
+<h4>Name (Required)</h4>
+<input type="text" class="form-control"    id="name"><br>
+
+
+
+<h4>Link to Photo Image (Required)</h4>
+<input type="text" class="form-control"    id="photo"><br>
+
+
+        <h3 class="first">Do you have mostly male or female friends?</h3>
+
+        <select class="form-control"    id="q1">
+            <option value="1">1 (Strongly Agree)</option>
+            <option value="2">2 Mostly Male</option>
+            <option value="3">3 Mostly Female</option>
+            <option value="4">4 Even mix of both</option>
+            <option value="5">5 (Strongly Disagree)</option>
+         
+          </select><br>
+
+
+
+          <h3 class="first"> Do you think of yourself as approachable?</h3>
+
+          <select class="form-control"    id="q2">
+            <option value="1">1 (Strongly Agree)</option>
+              <option value="2">2 Yes</option>
+              <option value="3">3 No</option>
+              <option value="4">4 Sometimes</option>
+            <option value="5">5 (Strongly Disagree)</option>
+            </select>
+            <br>
+
+            
+
+          <h3 class="first">How many of your friends own pets?</h3>
+
+          <select class="form-control"    id="q3">
+            <option value="1">1 (Strongly Agree)</option>
+              <option value="2">2 None</option>
+              <option value="3">3 2+</option>
+              <option value="4">4 All of them</option>
+            <option value="5">5 (Strongly Disagree)</option>
+            </select>
+            <br>
+
+            
+
+          <h3 class="first">How many intellectuals are in your group?</h3>
+
+          <select class="form-control"    id="q4">
+            <option value="1">1 (Strongly Agree)</option>
+              <option value="2">2 None, all artistic</option>
+              <option value="3">3 All, I love the academia </option>
+              <option value="4">4 half and half </option>
+            <option value="5">5 (Strongly Disagree)</option>
+            </select>
+            <br>
+
+
+            
+
+          <h3 class="first">How many foodies are in your group?</h3>
+
+          <select class="form-control"    id="q5">
+            <option value="1">1 (Strongly Agree)</option>
+              <option value="2">2 All of them</option>
+              <option value="3">3 Most of them</option>
+              <option value="4">4 None of them</option>
+            <option value="5">5 (Strongly Disagree)</option>
+            </select>
+            <br>
+
+
+            
+
+          <h3 class="first">Are your friends usually out going or shy?</h3>
+               <select class="form-control"    id="q6">
+             <option value="1">1 Strongly Agree</option>
+              <option value="2">2 I don't know</option>
+              <option value="3">3 Outgoing</option>
+              <option value="4">4  Shy</option>
+            <option value="5">5 (Strongly Disagree)</option>
+            </select>
+            <br>
+
+
+            
+
+          <h3 class="first">How often do you meditate?</h3>
+
+          <select class="form-control"    id="q7">
+            <option value="1">1 (Strongly Agree)</option>
+              <option value="2">2 once a day </option>
+              <option value="3">3 twice a day</option>
+              <option value="4">4 I don't meditate</option>
+            <option value="5">5 (Strongly Disagree)</option>
+            </select>
+            <br>
+
+
+            
+
+          <h3 class="first">What time of day do you meditate?</h3>
+
+          <select class="form-control"    id="q8">
+            <option value="1">1 (Strongly Agree)</option>
+              <option value="2">2 Morning</option>
+              <option value="3">3 Noon</option>
+              <option value="4">4 Evening</option>
+            <option value="5">5 (Strongly Disagree)</option>
+            </select>
+            <br>
+
+
+            
+
+          <h3 class="first">What type of pet do you own ?</h3>
+
+          <select class="form-control"    id="q9">
+            <option value="1">1  bird</option>
+              <option value="2">2 dog</option>
+              <option value="3">3 cat</option>
+              <option value="4">4 turtle</option>
+            <option value="5">5 I don't own a pet</option>
+            </select>
+            <br>
+
+
+            
+
+          <h3 class="first">How often do you like to travel with your friend?</h3>
+
+          <select class="form-control" id="q10">
+            <option  value="1">1 Never</option>
+              <option value="2">2 Always</option>
+              <option value="3">3 2+ times a year </option>
+              <option value="4">4 3+ times a year</option>
+            <option value="5">5 (Strongly Disagree)</option>
+            </select>
+            <br>
+
+
+            <button class="ui primary basic button" style="margin-bottom: 30px;">Submit</button>
+            </form>
+
+    </div>
+
+
+  <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js">
+
+
+</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+ $("#form").submit(function(e){
+
+   e.preventDefault();
+
+let name=$("#name").val();
+let pic=$("#photo").val();
+
+if(name=="" || pic=="")
+{
+  swal({
+  title: "Fields Empty",
+  text: "One of the Required Field is Empty",
+  icon: "error",
+});
+
+}
+
+else if(name!="" && pic!="")
+{
+  
+
+  let scores=[];
+
+  for(let i=1;i<11;i++)
+  {
+    
+    scores.push($(`#q${i}`).val());
+  }
+
+  $.ajax({
+    type: "POST",
+    url: "/api/friends",
+    data:JSON.stringify({"name":name,"photo":pic,"scores":scores}),
+    dataType: 'json', 
+    contentType : 'application/json',
+    success: function(result){
+      console.log(result);
+      swal({
+        html:true,
+        content: {
+    element: "img",
+    attributes: {
+      src: result.bestmatch.photo,
+     
+    },
+
+  },
+  title: `Your Best Match Is ${result.bestmatch.name}`,
+
+  icon: "success",
+});
+
+$("#name").val("");
+$("#photo").val("");
+
+
+
+    }
+});
+  
+
+
+}
+
+
+
+
+
+
+ })
+
+</script>
+
+
+</body>
+
+</htm>
