@@ -1,0 +1,25 @@
+body  {
+   background-image: url('https://img5.goodfon.com/original/1920x1080/b/a7/fon-derevo-doski-heart-wood-texture-background-wooden-2019-1.jpg');
+   
+   background-repeat:no-repeat;
+ 
+ }
+
+  
+h1{
+font-style: bold;
+color:greenyellow !important;
+
+font-size: large !important;
+}
+
+p{
+  color:greenyellow!important;
+}
+
+
+button:hover {
+  color: black !important;
+background-color: white !important;
+font-style: bold !important;
+}
